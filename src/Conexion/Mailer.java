@@ -14,11 +14,16 @@ import javax.mail.internet.MimeMessage;
 
 public class Mailer {
 
+//    public static final String MAIL_SERVER = "mail.tecnoweb.org.bo";
+//    static final String MAIL_USER = "grupo02sa";
+//    static final String MAIL_PASS = "grupo02grupo02";
+//    static final String MAIL_PORT = "25";
+//    static final String MAIL_USER_MAIL = "grupo02sa@tecnoweb.org.bo";
     public static final String MAIL_SERVER = "mail.tecnoweb.org.bo";
-    static final String MAIL_USER = "grupo02sa";
-    static final String MAIL_PASS = "grupo02grupo02";
+    static final String MAIL_USER = "grupo20sc";
+    static final String MAIL_PASS = "grup020grup020";
     static final String MAIL_PORT = "25";
-    static final String MAIL_USER_MAIL = "grupo02sa@tecnoweb.org.bo";
+    static final String MAIL_USER_MAIL = "prueba@tecnoweb.org.bo";
 
     public void sendHtmlEmail(String toAddress, String subject, String message)
             throws AddressException, MessagingException {

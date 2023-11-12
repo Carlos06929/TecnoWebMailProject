@@ -8,16 +8,12 @@ public class NUsuario {
     
     public void insertar(LinkedList<String> arg) {
         dusuario = new DUsuario();
-        dusuario.setNombre(arg.get(0));
-        dusuario.setApellido(arg.get(1));
-        dusuario.setGenero(arg.get(2).charAt(0));
-        dusuario.setFechaDeNacimiento(arg.get(3));
-        dusuario.setFoto(arg.get(4));
-        dusuario.setCarnetDeIdentidad(arg.get(5));
-        dusuario.setDireccionDeVivienda(arg.get(6));
-        dusuario.setRolId(Integer.parseInt(arg.get(7)));
-        dusuario.setEmail(arg.get(8));
-        dusuario.setPassword(arg.get(9));
+        dusuario.setNombre(arg.get(1));
+         
+//        dusuario.setRolId(Integer.parseInt(arg.get(7)));
+        dusuario.setCorreo(arg.get(2));
+        dusuario.setContraseña(arg.get(3));
+        dusuario.setTelefono(arg.get(4));
         dusuario.insertar();
     }
 
@@ -25,21 +21,17 @@ public class NUsuario {
         dusuario = new DUsuario();
         dusuario.setId(Integer.parseInt(arg.get(0)));
         dusuario.setNombre(arg.get(1));
-        dusuario.setApellido(arg.get(2));
-        dusuario.setGenero(arg.get(3).charAt(0));
-        dusuario.setFechaDeNacimiento(arg.get(4));
-        dusuario.setFoto(arg.get(5));
-        dusuario.setCarnetDeIdentidad(arg.get(6));
-        dusuario.setDireccionDeVivienda(arg.get(7));
-        dusuario.setRolId(Integer.parseInt(arg.get(8)));
-        dusuario.setEmail(arg.get(9));
-        dusuario.setPassword(arg.get(10));
+         
+//        dusuario.setRolId(Integer.parseInt(arg.get(7)));
+        dusuario.setCorreo(arg.get(2));
+        dusuario.setContraseña(arg.get(3));
+        dusuario.setTelefono(arg.get(4));
         dusuario.modificar();
     }
 
-    public LinkedList<String> listar() {
+    public LinkedList<String> listarUsuarios() {
         dusuario = new DUsuario();
-        return dusuario.listar();
+        return dusuario.listarUsuarios();
     }
     
     public LinkedList<String> listar_por_rol_id(int rol_id) {
@@ -54,8 +46,8 @@ public class NUsuario {
 
     public void eliminar(int id) {
         dusuario = new DUsuario();
-        dusuario.setId(id);
-        dusuario.eliminar();
+      
+        dusuario.eliminar(id);
     }
 
     public LinkedList<String> mostrar(int id) {
@@ -68,10 +60,10 @@ public class NUsuario {
         dusuario = new DUsuario();
         return dusuario.buscar_usuario_nombre(nombre);
     }
-    public LinkedList<String> buscar_usuario_apellido(String apellido) {
-        dusuario = new DUsuario();
-        return dusuario.buscar_usuario_apellido(apellido);
-    }
+//    public LinkedList<String> buscar_usuario_apellido(String apellido) {
+//        dusuario = new DUsuario();
+//        return dusuario.buscar_usuario_apellido(apellido);
+//    }
     
     public boolean existe(String id){
         dusuario = new DUsuario();

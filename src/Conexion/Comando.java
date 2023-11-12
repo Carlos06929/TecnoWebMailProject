@@ -274,7 +274,7 @@ public class Comando {
                     campos.add("NOMBRE_DEL_ROL");
                     LinkedList<String> datos = new LinkedList<>();
                     nusuario = new NUsuario();
-                    datos = nusuario.listar();
+                    datos = nusuario.listarUsuarios();
                     salida.sendHtmlEmail(from, "Comando: " + comando + " enviado", ToHTML.getHTMLMessage("LISTADO DE USUARIOS", ToHTML.getTable(datos, campos)));               
             } else {
                 System.out.println("ERROR: LA CANTIDAD DE LOS DATOS SON INCORRECTOS");
@@ -413,33 +413,33 @@ public class Comando {
 //  LISTARUSERFILTRADOPORAPELLIDODEUSUARIO:{user_apellido}               //:{cod....|.....}
 //  LISTARUSERFILTRADOPORAPELLIDODEUSUARIO:{user_apellido}               //:{cod....|.....}
 //  LISTARUSERFILTRADOPORAPELLIDODEUSUARIO:{user_apellido}               //:{cod....|.....}
-        case "LISTARUSERFILTRADOPORAPELLIDODEUSUARIO": 
-            if (parametros.size() == 2) {
-                String user_apellido = parametros.get(1).replace('_',' ');
-                if(validar.isNameText(user_apellido)){
-                    LinkedList<String> campos = new LinkedList<>();
-                    campos.add("ID");
-                    campos.add("NOMBRES");
-                    campos.add("APELLIDOS");
-                    campos.add("GENERO");
-                    campos.add("FECHA_DE_NACIMIENTO");
-                    campos.add("DIRECCION_DE_VIVIENDA");
-                    campos.add("CARNET_DE_IDENTIDAD");
-                    campos.add("EMAIL");
-                    campos.add("NOMBRE_DEL_ROL");
-                    LinkedList<String> datos = new LinkedList<>();
-                    nusuario = new NUsuario();
-                    datos = nusuario.buscar_usuario_apellido(user_apellido);
-                    salida.sendHtmlEmail(from, "Comando: " + comando + " enviado", ToHTML.getHTMLMessage("LISTADO DE USUARIOS FILTRADO POR APELLIDO DE USUARIO: "+user_apellido, ToHTML.getTable(datos, campos)));
-                }else {
-                    System.out.println("ERROR: EL APELLIDO DE USUARIO: "+user_apellido+",INTRODUCIDO NO TIENEN EL FORMATO CORRECTO");
-                    salida.sendHtmlEmail(from, "EL APELLIDO DE USUARIO: "+user_apellido+",INTRODUCIDO NO TIENEN EL FORMATO CORRECTO", ToHTML.getHTMLMessage("El apellido de usuario introducido no tiene el formato correcto para poder buscar en el listado de usuarios", "Verifique que el apellido de usuario introducido sean de formato correcto para poder buscar dentro del listado de usuarios"));
-                }
-            } else {
-                System.out.println("ERROR: LA CANTIDAD DE LOS DATOS SON INCORRECTOS");
-                salida.sendHtmlEmail(from, "ERROR: LA CANTIDAD DE LOS DATOS SON INCORRECTOS", ToHTML.getHTMLMessage("Cantidad incorrecta de datos ", "Revisa que la cantidad de datos sea correcta"));
-            }
-        break;
+//        case "LISTARUSERFILTRADOPORAPELLIDODEUSUARIO": 
+//            if (parametros.size() == 2) {
+//                String user_apellido = parametros.get(1).replace('_',' ');
+//                if(validar.isNameText(user_apellido)){
+//                    LinkedList<String> campos = new LinkedList<>();
+//                    campos.add("ID");
+//                    campos.add("NOMBRES");
+//                    campos.add("APELLIDOS");
+//                    campos.add("GENERO");
+//                    campos.add("FECHA_DE_NACIMIENTO");
+//                    campos.add("DIRECCION_DE_VIVIENDA");
+//                    campos.add("CARNET_DE_IDENTIDAD");
+//                    campos.add("EMAIL");
+//                    campos.add("NOMBRE_DEL_ROL");
+//                    LinkedList<String> datos = new LinkedList<>();
+//                    nusuario = new NUsuario();
+//                    datos = nusuario.(user_apellido);
+//                    salida.sendHtmlEmail(from, "Comando: " + comando + " enviado", ToHTML.getHTMLMessage("LISTADO DE USUARIOS FILTRADO POR APELLIDO DE USUARIO: "+user_apellido, ToHTML.getTable(datos, campos)));
+//                }else {
+//                    System.out.println("ERROR: EL APELLIDO DE USUARIO: "+user_apellido+",INTRODUCIDO NO TIENEN EL FORMATO CORRECTO");
+//                    salida.sendHtmlEmail(from, "EL APELLIDO DE USUARIO: "+user_apellido+",INTRODUCIDO NO TIENEN EL FORMATO CORRECTO", ToHTML.getHTMLMessage("El apellido de usuario introducido no tiene el formato correcto para poder buscar en el listado de usuarios", "Verifique que el apellido de usuario introducido sean de formato correcto para poder buscar dentro del listado de usuarios"));
+//                }
+//            } else {
+//                System.out.println("ERROR: LA CANTIDAD DE LOS DATOS SON INCORRECTOS");
+//                salida.sendHtmlEmail(from, "ERROR: LA CANTIDAD DE LOS DATOS SON INCORRECTOS", ToHTML.getHTMLMessage("Cantidad incorrecta de datos ", "Revisa que la cantidad de datos sea correcta"));
+//            }
+//        break;
 //----------------------------------------------------------------------------------------------------------------------
 //  LISTAR CONVOCATORIA
 //  LISTARCONVOCATORIA               //:{cod....|.....}
@@ -944,14 +944,10 @@ public class Comando {
                         datos = nusuario.mostrar(Integer.parseInt(id));
                         LinkedList<String> campos = new LinkedList<>();
                         campos.add("ID");
-                        campos.add("NOMBRES");
-                        campos.add("APELLIDOS");
-                        campos.add("GENERO");
-                        campos.add("FECHA_DE_NACIMIENTO");
-                        campos.add("DIRECCION_DE_VIVIENDA");
-                        campos.add("CARNET_DE_IDENTIDAD");
-                        campos.add("EMAIL");
-                        campos.add("NOMBRE_DEL_ROL");
+                        campos.add("NOMBRE");
+                        campos.add("CORREO");
+                         campos.add("TELEFONO");
+//                        campos.add("NOMBRE_DEL_ROL");
                         salida.sendHtmlEmail(from, "Comando: " + comando + " enviado", ToHTML.getHTMLMessage("MOSTRAR USUARIO CON ID: "+id, ToHTML.getTable(datos, campos)));                        
                     
                     } else {

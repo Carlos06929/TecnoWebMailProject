@@ -6,10 +6,10 @@ public class ConexionDb {
 	private static Connection connection;
     private static Statement statement;
 
-    private static final String HOST = "jdbc:postgresql://mail.tecnoweb.org.bo:5432/";
-    private static final String DATABASE = "db_grupo02sa";
-    private static final String USER = "grupo02sa";
-    private static final String PASS = "grup002grup002";
+    private static final String HOST = "jdbc:postgresql://localhost:5432/";
+    private static final String DATABASE = "tecno";
+    private static final String USER = "postgres";
+    private static final String PASS = "root";
 
 	public ConexionDb() {
 		connection = null;

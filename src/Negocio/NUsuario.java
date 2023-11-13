@@ -1,5 +1,5 @@
 package Negocio;
-import Datos.DUsuario;
+import Datos.Usuarios.DUsuario;
 import java.util.LinkedList;
 
 public class NUsuario {

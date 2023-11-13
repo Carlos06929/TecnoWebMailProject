@@ -21,9 +21,11 @@ public class POP3 {
 //    private DataOutputStream Salida;
     private static final String HOST = "mail.tecnoweb.org.bo";
     private static final int PORT = 110;
-    private static final String USER = "grupo20sc";
-    private static final String PASS = "grup020grup020";
+    private static final String USER = "grupo05sc";
+    private static final String PASS = "grup005grup005";
     private static final String SALTO = "\n";
+
+    
     private String COMAND = "";
     private Socket Conexion;
     private BufferedReader Entrada;

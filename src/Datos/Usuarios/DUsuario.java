@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Datos;
+package Datos.Usuarios;
 
+import Datos.DBConnection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
@@ -20,7 +21,7 @@ public class DUsuario {
     private String correo;
     private String contraseña;
     private String telefono;
-
+    private int rol_id;
     // contructor vacio
     public DUsuario() {
         this.id = 0;
@@ -28,6 +29,7 @@ public class DUsuario {
         this.correo = "";
         this.contraseña = "";
         this.telefono = "";
+        this.rol_id=0;
 
     }
     /// constructor parametrizado 
@@ -60,6 +62,12 @@ public class DUsuario {
         this.telefono = telefono;
     }
 
+    public void setRolId(int rol_id) {
+        this.rol_id = rol_id;
+    }
+    
+    
+
     public int getId() {
         return id;
     }
@@ -75,6 +83,11 @@ public class DUsuario {
     public String getContraseña() {
         return contraseña;
     }
+
+    public int getRolId() {
+        return rol_id;
+    }
+    
 
     public String getTelefono() {
         return telefono;

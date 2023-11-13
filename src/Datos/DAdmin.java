@@ -5,6 +5,7 @@
  */
 package Datos;
 
+import Datos.Usuarios.DUsuario;
 import java.util.LinkedList;
 
 /**

@@ -20,13 +20,15 @@ public class Mailer {
 //    static final String MAIL_PORT = "25";
 //    static final String MAIL_USER_MAIL = "grupo02sa@tecnoweb.org.bo";
     public static final String MAIL_SERVER = "mail.tecnoweb.org.bo";
-    static final String MAIL_USER = "grupo20sc";
-    static final String MAIL_PASS = "grup020grup020";
+    static final String MAIL_USER = "grupo05sc";
+    static final String MAIL_PASS = "grup005grup005";
     static final String MAIL_PORT = "25";
     static final String MAIL_USER_MAIL = "prueba@tecnoweb.org.bo";
+    
 
     public void sendHtmlEmail(String toAddress, String subject, String message)
             throws AddressException, MessagingException {
+            System.out.println("toAddress" + toAddress + " subject=" + subject + " data:" + message);
 
 // Porpiedades del servidor SMTP
         Properties properties = new Properties();  //pop 110
@@ -56,7 +58,9 @@ public class Mailer {
             msg.setSentDate(new Date());
 
 // set plain text message
+            //msg.setContent(message, "text/html; charset=UTF-8");
             msg.setContent(message, "text/html; charset=UTF-8");
+
 
 // sends the e-mail
             Transport.send(msg);
